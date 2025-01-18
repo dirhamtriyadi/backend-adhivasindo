@@ -47,7 +47,7 @@ class ContentController extends Controller
 
         if ($validator->fails()) {
             return response()->json([
-                'status' => 'failed',
+                'status' => 'error',
                 'message' => 'Validation Error',
                 'data' => $validator->errors(),
             ], 422);
@@ -70,7 +70,7 @@ class ContentController extends Controller
         $content = Content::find($id);
         if (!$content) {
             return response()->json([
-                'status' => 'failed',
+                'status' => 'error',
                 'message' => 'Data not found',
             ], 404);
         }
@@ -94,7 +94,7 @@ class ContentController extends Controller
 
         if ($validator->fails()) {
             return response()->json([
-                'status' => 'failed',
+                'status' => 'error',
                 'message' => 'Validation Error',
                 'data' => $validator->errors(),
             ], 422);
@@ -103,7 +103,7 @@ class ContentController extends Controller
         $content = Content::find($id);
         if (!$content) {
             return response()->json([
-                'status' => 'failed',
+                'status' => 'error',
                 'message' => 'Data not found',
             ], 404);
         }
@@ -125,7 +125,7 @@ class ContentController extends Controller
         $content = Content::find($id);
         if (!$content) {
             return response()->json([
-                'status' => 'failed',
+                'status' => 'error',
                 'message' => 'Data not found',
             ], 404);
         }
